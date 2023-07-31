@@ -5,6 +5,8 @@
 #ifndef DATA_STRUCTURES_ASSIGN1_STUDENT_H
 #define DATA_STRUCTURES_ASSIGN1_STUDENT_H
 
+#include <string>
+using namespace std;
 
 class Student {
 private:
@@ -12,7 +14,7 @@ private:
     string id;
     double gpa;
 public:
-    Student(const string& name, string id, double gpa){
+    Student( string& name, string id, double gpa){ //const string& name
         name = name;
         id = id;
         gpa = gpa;
