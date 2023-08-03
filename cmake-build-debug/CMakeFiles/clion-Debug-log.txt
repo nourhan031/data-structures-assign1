@@ -1,17 +1,27 @@
 "C:\Program Files\JetBrains\CLion 2022.1.3\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=C:/Program Files/JetBrains/CLion 2022.1.3/bin/ninja/win/x64/ninja.exe" -G Ninja -S C:\Users\nourh\OneDrive\Pictures\GitHub\data-structures-assign1 -B C:\Users\nourh\OneDrive\Pictures\GitHub\data-structures-assign1\cmake-build-debug
-CMake Warning (dev) in CMakeLists.txt:
-  No project() command is present.  The top-level CMakeLists.txt file must
-  contain a literal, direct call to the project() command.  Add a line of
-  code such as
+CMake Error at CMakeLists.txt:8 (add_executable):
+  add_executable cannot create target "data-structures-assign1" because
+  another target with the same name already exists.  The existing target is
+  an executable created in source directory
+  "C:/Users/nourh/OneDrive/Pictures/GitHub/data-structures-assign1".  See
+  documentation for policy CMP0002 for more details.
 
-    project(ProjectName)
 
-  near the top of the file, but after cmake_minimum_required().
+CMake Error at CMakeLists.txt:9 (add_executable):
+  add_executable cannot create target "data-structures-assign1" because
+  another target with the same name already exists.  The existing target is
+  an executable created in source directory
+  "C:/Users/nourh/OneDrive/Pictures/GitHub/data-structures-assign1".  See
+  documentation for policy CMP0002 for more details.
 
-  CMake is pretending there is a "project(Project)" command on the first
-  line.
-This warning is for project developers.  Use -Wno-dev to suppress it.
 
--- Configuring done
--- Generating done
--- Build files have been written to: C:/Users/nourh/OneDrive/Pictures/GitHub/data-structures-assign1/cmake-build-debug
+CMake Error at CMakeLists.txt:10 (add_executable):
+  add_executable cannot create target "data-structures-assign1" because
+  another target with the same name already exists.  The existing target is
+  an executable created in source directory
+  "C:/Users/nourh/OneDrive/Pictures/GitHub/data-structures-assign1".  See
+  documentation for policy CMP0002 for more details.
+
+
+-- Configuring incomplete, errors occurred!
+See also "C:/Users/nourh/OneDrive/Pictures/GitHub/data-structures-assign1/cmake-build-debug/CMakeFiles/CMakeOutput.log".

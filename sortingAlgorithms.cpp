@@ -48,35 +48,40 @@ int selectionSort(vector<T>& arr){
 
 //BUBBLE SORT
     template<typename T>
-    void bubble_sort(vector<T> &arr) {
+    int bubble_sort(vector<T> &arr) { //int instead of void
+        int comparisons = 0;
         int n = arr.size();
-        bool sorted = true;  // to check if the array is already sorted
-        for (int i = 0; i < n - 1; i++)
-        {
-            for (int j = 0; j < n - i - 1; j++)
-            {
-                if (arr[j] > arr[j + 1])
+        bool sorted = true;// to check if the array is already sorted
+
+        for (int i = 0; i < n - 1; i++){
+            for (int j = 0; j < n - i - 1; j++){
+                if (arr[j] > arr[j+1] && ++comparisons)
                 {
                     swap(arr[j], arr[j + 1]);
                     sorted = false;
                 }
             }
-            if (sorted == true) // if reached this, then the array is already sored
+            if (sorted == true) { // if reached this, then the array is already sored
                 break;
+            }
         }
+    return comparisons;
     }
 
 
-//SHELL SORT
 
 //MERGE SORT
     template<typename T>
-    void merge(vector<T> &arr, int l, int r, int mid) {
+    void merge(vector<T> &arr, int l, int r, int mid, int& comparisons) {
         int i, j, k;
         int sz1 = mid - l + 1; // in case of odd array, put the extra on the left sub array
         int sz2 = r - mid; // size of right/left subarrays
         int *subL = new int[sz1]; // left subarray, as dynamic array
         int *subR = new int[sz2]; // Right subarray. as dynamic array (if static, the sz1,sz2 must be const)
+
+        //for the reading/adding into files
+        vector<T> subL(sz1);
+        vector<T> subR(sz2);
 
         for (int i = 0; i < sz1; i++) {
             subL[i] = arr[l + i];  //insert element for left subarray
@@ -90,7 +95,7 @@ int selectionSort(vector<T>& arr){
         // start comparing
         while (i < sz1 && j < sz2) // compare between right and left subarrays
         {
-            if (subL[i] <= subR[j]) {
+            if (subL[i] <= subR[j] && ++comparisons) {
                 arr[k] = subL[i];
                 i++;
             } else {
@@ -114,14 +119,17 @@ int selectionSort(vector<T>& arr){
     }
 
     template<typename T>
-    void merge_sort(vector<T> &arr, int l, int r) {
+    void merge_sort(vector<T> &arr, int l, int r, int& comparisons) {
         if (l < r)
         {
-            int mid = (l + r)  / 2;
-            merge_sort<T>(arr, l, mid);
-            merge_sort<T>(arr, mid + 1, r);
-            merge<T>(arr, l, r, mid);
+            int mid = l+ (r -l)  / 2;
+            merge_sort<T>(arr, l, mid, comparisons);
+            merge_sort<T>(arr, mid + 1, r, comparisons);
+            merge<T>(arr, l, mid, r, comparisons);
         }
     }
 
 //QUICK SORT
+
+
+//SHELL SORT
