@@ -7,8 +7,9 @@
 #include <vector>
 #include <algorithm>
 #include "Student.h"
-#include "readFile.h"
+#include "fileReadAndWrite.h"
 #include "sortingAlgorithms.h"
+
 using namespace std;
 
 //read student data from the file
