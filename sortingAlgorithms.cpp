@@ -15,7 +15,7 @@ int insertionSort(vector<T>& arr){
         T key = arr[i];
         int j = i-1;
 
-        while(j>=0 && ++comparison && arr[j]>key){
+        while(j>=0 && ++comparison && key<arr[j]){
             arr[j+1] = arr[j];
             --j;
         }
@@ -130,6 +130,7 @@ int selectionSort(vector<T>& arr){
     }
 
 //QUICK SORT
+
 
 
 //SHELL SORT

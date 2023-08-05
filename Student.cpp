@@ -27,7 +27,8 @@ public:
     double getGPA()const{
         return gpa;
     }
+    bool operator<(const Student& s1) {
+        return name < s1.getName();
+    }
 };
-bool operator<(const Student& s1, const Student& s2) {
-    return s1.getName() < s2.getName();
-}
+
